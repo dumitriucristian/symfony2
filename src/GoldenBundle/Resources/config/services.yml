@@ -1,0 +1,4 @@
+services:
+#    golden.example:
+#        class: GoldenBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

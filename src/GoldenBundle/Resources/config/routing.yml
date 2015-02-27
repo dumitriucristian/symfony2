@@ -1,0 +1,3 @@
+golden_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: GoldenBundle:Default:index }

@@ -1,0 +1,1 @@
+{ parameters: { database_driver: pdo_mysql, database_host: 127.0.0.1, database_port: null, database_name: golden, database_user: root, database_password: admin, mailer_transport: smtp, mailer_host: 127.0.0.1, mailer_user: null, mailer_password: null, locale: en, secret: fdc3d62357476cab69f5ebd8b48c3c91fa957e63, database_path: null } }
