@@ -1,3 +1,11 @@
-golden_homepage:
-    path:     /hello/{name}
+golden:
+    path:     /
     defaults: { _controller: GoldenBundle:Default:index }
+    path:	contact
+    defaults: { _controller: GoldenBundle:Default:contact }
+
+  
+
+
+
+

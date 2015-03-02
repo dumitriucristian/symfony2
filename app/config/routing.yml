@@ -1,8 +1,8 @@
 golden:
-    resource: "@GoldenBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: "@GoldenBundle/Controller/"
+    type: annotation
 
 app:
     resource: @AppBundle/Controller/
-    type:     annotation
+    type:    annotation
 

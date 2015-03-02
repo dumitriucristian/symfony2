@@ -1,0 +1,30 @@
+body{
+	background-color: black;
+	color:white;
+}
+#menu ul{
+
+}
+#menu li{
+	float: left;
+width: 70px;
+text-decoration: none;
+list-style: none;
+padding: 5px;
+
+}
+
+#menu li a{
+	color: #5EC2FD;
+
+	text-align: center;
+	font-weight: bold;
+
+
+}
+a#LogIn {
+	padding: 6px;
+	color: #00F500;
+	width: 26px;
+	font-weight: bolder;
+}

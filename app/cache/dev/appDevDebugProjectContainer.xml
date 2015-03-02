@@ -450,7 +450,9 @@
     <parameter key="assetic.value_supplier.class">Symfony\Bundle\AsseticBundle\DefaultValueSupplier</parameter>
     <parameter key="assetic.node.paths" type="collection"/>
     <parameter key="assetic.cache_dir">/home/web/golden/app/cache/dev/assetic</parameter>
-    <parameter key="assetic.bundles" type="collection"/>
+    <parameter key="assetic.bundles" type="collection">
+      <parameter>GoldenBundle</parameter>
+    </parameter>
     <parameter key="assetic.twig_extension.class">Symfony\Bundle\AsseticBundle\Twig\AsseticExtension</parameter>
     <parameter key="assetic.twig_formula_loader.class">Assetic\Extension\Twig\TwigFormulaLoader</parameter>
     <parameter key="assetic.helper.dynamic.class">Symfony\Bundle\AsseticBundle\Templating\DynamicAsseticHelper</parameter>
@@ -2252,7 +2254,9 @@
             <argument type="service" id="templating.name_parser"/>
             <argument>true</argument>
             <argument type="collection"/>
-            <argument type="collection"/>
+            <argument type="collection">
+              <argument>GoldenBundle</argument>
+            </argument>
             <argument type="service">
               <service class="Symfony\Bundle\AsseticBundle\DefaultValueSupplier" public="false">
                 <argument type="service" id="service_container"/>
@@ -2358,6 +2362,11 @@
     <service id="assetic.asset_manager" class="Assetic\Factory\LazyAssetManager">
       <argument type="service" id="assetic.asset_factory"/>
       <argument type="collection">
+        <argument key="config" type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Loader\ConfigurationLoader" public="false">
+            <tag name="assetic.formula_loader" alias="config"/>
+          </service>
+        </argument>
         <argument key="twig" type="service">
           <service class="Assetic\Factory\Loader\CachedFormulaLoader" public="false">
             <tag name="assetic.formula_loader" alias="twig"/>
@@ -2379,6 +2388,109 @@
           </service>
         </argument>
       </argument>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\ConfigurationResource" public="false">
+            <tag name="assetic.formula_resource" loader="config"/>
+            <argument type="collection">
+              <argument key="jquery" type="collection">
+                <argument type="collection">
+                  <argument>/home/web/golden/app/../vendor/components/jquery/jquery-2.1.3.js</argument>
+                </argument>
+                <argument type="collection"/>
+                <argument type="collection"/>
+              </argument>
+              <argument key="bootstrap_js" type="collection">
+                <argument type="collection">
+                  <argument>/home/web/golden/app/../vendor/twitter/bootstrap/dist/js/bootstrap.js</argument>
+                </argument>
+                <argument type="collection"/>
+                <argument type="collection"/>
+              </argument>
+              <argument key="custom_css" type="collection">
+                <argument type="collection">
+                  <argument>/home/web/golden/app/../web/css/custom.css</argument>
+                </argument>
+                <argument type="collection"/>
+                <argument type="collection"/>
+              </argument>
+              <argument key="bootstrap_css" type="collection">
+                <argument type="collection">
+                  <argument>/home/web/golden/app/../vendor/twitter/bootstrap/dist/css/bootstrap.css</argument>
+                </argument>
+                <argument type="collection">
+                  <argument>cssrewrite</argument>
+                </argument>
+                <argument type="collection"/>
+              </argument>
+              <argument key="bootstrap_glyphicons_ttf" type="collection">
+                <argument type="collection">
+                  <argument>/home/web/golden/app/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf</argument>
+                </argument>
+                <argument type="collection"/>
+                <argument type="collection">
+                  <argument key="output">fonts/glyphicons-halflings-regular.ttf</argument>
+                </argument>
+              </argument>
+              <argument key="bootstrap_glyphicons_eot" type="collection">
+                <argument type="collection">
+                  <argument>/home/web/golden/app/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.eot</argument>
+                </argument>
+                <argument type="collection"/>
+                <argument type="collection">
+                  <argument key="output">fonts/glyphicons-halflings-regular.eot</argument>
+                </argument>
+              </argument>
+              <argument key="bootstrap_glyphicons_svg" type="collection">
+                <argument type="collection">
+                  <argument>/home/web/golden/app/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.svg</argument>
+                </argument>
+                <argument type="collection"/>
+                <argument type="collection">
+                  <argument key="output">fonts/glyphicons-halflings-regular.svg</argument>
+                </argument>
+              </argument>
+              <argument key="bootstrap_glyphicons_woff" type="collection">
+                <argument type="collection">
+                  <argument>/home/web/golden/app/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.woff</argument>
+                </argument>
+                <argument type="collection"/>
+                <argument type="collection">
+                  <argument key="output">fonts/glyphicons-halflings-regular.woff</argument>
+                </argument>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>config</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>GoldenBundle</argument>
+                  <argument>/home/web/golden/app/Resources/GoldenBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>GoldenBundle</argument>
+                  <argument>/home/web/golden/src/GoldenBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
       <call method="addResource">
         <argument type="service">
           <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource" public="false">

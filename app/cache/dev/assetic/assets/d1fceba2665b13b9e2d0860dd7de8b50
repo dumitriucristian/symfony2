@@ -1,0 +1,11 @@
+body{
+	background-color: black;
+	color:white;
+}
+#menu li{
+	float: left;
+width: 70px;
+text-decoration: none;
+list-style: none;
+color: lightcyan;
+}

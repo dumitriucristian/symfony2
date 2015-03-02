@@ -4,31 +4,63 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block title %}Test Application{% endblock %}</title>
-    </head>
-    <body>
-        <div id="header">
-         {% block header %}
-            <h1>This is the unique header - after the first commit to the second</h1>
-        {% endblock %}
-        </div>
-        <div id="sidebar">
-            {% block sidebar %}
-                <ul>
-                      <li><a href="/">Home</a></li>
-                      <li><a href="/blog">Blog</a></li>
-                </ul>
-            {% endblock %}
-        </div>
+             {% javascripts '@jquery' '@bootstrap_js'  %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
 
-        <div id="content">
-            {% block content %}
-                <p>Here is the general content</p> 
-            {% endblock %}
-        </div>
-        <div id="footer">
-            {% block footer %}
-                <p>Here is general footer</p>
-            {% endblock %}
-        </div>
+        {% stylesheets '@bootstrap_css' '@custom_css' %}
+
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+            
+        {% endstylesheets %}
+   </head>
+    <body>
+       
+
+
+
+        <div class='container-fluid'>
+            <div id="header">
+                <div id="menu" class="row">
+                    <ul class="col-sm-4 col-sm-offset-4">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/shop">Shop</a>
+                        </li>
+                        <li>
+                            <a href="/about">About</a>
+                        </li>
+                        <li>
+                            <a href="/blog">Blog</a>
+                        </li>
+                        <li>
+                            <a href="/contact">Contact</a>
+                        </li>
+                    </ul>
+               <a href="login" id="login" class="glyphicon glyphicon-off" ></a>
+
+
+                <div id="slider" class="row">
+                </div>
+
+                {% block header %}
+                    <h1>test</h1>
+                {% endblock %}
+            </div>
+          
+
+            <div id="content">
+                {% block content %}
+                    <p>Review Produse</p> 
+                {% endblock %}
+            </div>
+            <div id="footer">
+                {% block footer %}
+                    <p>Here is general footer</p>
+                {% endblock %}
+            </div>
+         </div>   
     </body>
 </html>

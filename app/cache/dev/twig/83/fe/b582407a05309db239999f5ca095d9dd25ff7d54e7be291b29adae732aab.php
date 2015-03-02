@@ -37,17 +37,13 @@ class __TwigTemplate_83feb582407a05309db239999f5ca095d9dd25ff7d54e7be291b29adae7
     public function block_title($context, array $blocks = array())
     {
         // line 4
-        echo "\t<h1>First page</h1>
+        echo "\tFirst page
 ";
     }
 
     // line 6
     public function block_content($context, array $blocks = array())
     {
-        // line 7
-        echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
-        echo "
-";
     }
 
     public function getTemplateName()
@@ -62,6 +58,6 @@ class __TwigTemplate_83feb582407a05309db239999f5ca095d9dd25ff7d54e7be291b29adae7
 
     public function getDebugInfo()
     {
-        return array (  48 => 7,  45 => 6,  40 => 4,  37 => 3,  11 => 2,);
+        return array (  45 => 6,  40 => 4,  37 => 3,  11 => 2,);
     }
 }
