@@ -33,15 +33,15 @@ class __TwigTemplate_83feb582407a05309db239999f5ca095d9dd25ff7d54e7be291b29adae7
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
+    // line 4
     public function block_title($context, array $blocks = array())
     {
-        // line 4
+        // line 5
         echo "\tFirst page
 ";
     }
 
-    // line 6
+    // line 8
     public function block_content($context, array $blocks = array())
     {
     }
@@ -58,6 +58,6 @@ class __TwigTemplate_83feb582407a05309db239999f5ca095d9dd25ff7d54e7be291b29adae7
 
     public function getDebugInfo()
     {
-        return array (  45 => 6,  40 => 4,  37 => 3,  11 => 2,);
+        return array (  45 => 8,  40 => 5,  37 => 4,  11 => 2,);
     }
 }

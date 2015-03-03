@@ -1,10 +1,11 @@
-golden:
-    path:     /
-    defaults: { _controller: GoldenBundle:Default:index }
-    path:	contact
-    defaults: { _controller: GoldenBundle:Default:contact }
+golden_index: 
+	path: /
+	defaults: { _controller: GoldenBundle:Default:index }
 
-  
+golden_blog:
+	path: /blog
+	defaults: { _controller: GoldenBundle:Default:blog }
+
 
 
 

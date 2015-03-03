@@ -281,6 +281,21 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'GoldenBundle\\Controller\\DefaultController::contactAction',  '_route' => 'golden_default_contact',);
         }
 
+        // golden_default_about
+        if ($pathinfo === '/about') {
+            return array (  '_controller' => 'GoldenBundle\\Controller\\DefaultController::aboutAction',  '_route' => 'golden_default_about',);
+        }
+
+        // golden_default_blog
+        if ($pathinfo === '/blog') {
+            return array (  '_controller' => 'GoldenBundle\\Controller\\DefaultController::blogAction',  '_route' => 'golden_default_blog',);
+        }
+
+        // golden_default_login
+        if ($pathinfo === '/login') {
+            return array (  '_controller' => 'GoldenBundle\\Controller\\DefaultController::loginAction',  '_route' => 'golden_default_login',);
+        }
+
         // golden_shop_index
         if ($pathinfo === '/shop') {
             return array (  '_controller' => 'GoldenBundle\\Controller\\ShopController::indexAction',  '_route' => 'golden_shop_index',);

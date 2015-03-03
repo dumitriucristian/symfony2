@@ -10,7 +10,6 @@ class __TwigTemplate_a520be641d7e8394442a1cdb32dbcd63cdba1493bf1bf2cc6bed5dc63c3
         $this->parent = false;
 
         $this->blocks = array(
-            'title' => array($this, 'block_title'),
             'header' => array($this, 'block_header'),
             'content' => array($this, 'block_content'),
             'footer' => array($this, 'block_footer'),
@@ -26,9 +25,9 @@ class __TwigTemplate_a520be641d7e8394442a1cdb32dbcd63cdba1493bf1bf2cc6bed5dc63c3
         <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
         <title>";
         // line 6
-        $this->displayBlock('title', $context, $blocks);
+        echo twig_escape_filter($this->env, (isset($context["title"]) ? $context["title"] : $this->getContext($context, "title")), "html", null, true);
         echo "</title>
-             ";
+        ";
         // line 7
         if (isset($context['assetic']['debug']) && $context['assetic']['debug']) {
             // asset "a56fa94_0"
@@ -61,43 +60,28 @@ class __TwigTemplate_a520be641d7e8394442a1cdb32dbcd63cdba1493bf1bf2cc6bed5dc63c3
             // asset "4bf665d_0"
             $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_4bf665d_0") : $this->env->getExtension('assets')->getAssetUrl("_controller/css/4bf665d_part_1.css");
             // line 12
-            echo "
-            <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
-            // line 13
+            echo "            <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
             echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
             echo "\"/>
-            
         ";
             // asset "4bf665d_1"
             $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_4bf665d_1") : $this->env->getExtension('assets')->getAssetUrl("_controller/css/4bf665d_part_2.css");
-            // line 12
-            echo "
-            <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
-            // line 13
+            echo "            <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
             echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
             echo "\"/>
-            
         ";
         } else {
             // asset "4bf665d"
             $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_4bf665d") : $this->env->getExtension('assets')->getAssetUrl("_controller/css/4bf665d.css");
-            // line 12
-            echo "
-            <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
-            // line 13
+            echo "            <link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"";
             echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
             echo "\"/>
-            
         ";
         }
         unset($context["asset_url"]);
-        // line 16
+        // line 14
         echo "   </head>
     <body>
-       
-
-
-
         <div class='container-fluid'>
             <div id=\"header\">
                 <div id=\"menu\" class=\"row\">
@@ -125,55 +109,49 @@ class __TwigTemplate_a520be641d7e8394442a1cdb32dbcd63cdba1493bf1bf2cc6bed5dc63c3
                 </div>
 
                 ";
-        // line 48
+        // line 42
         $this->displayBlock('header', $context, $blocks);
-        // line 51
+        // line 45
         echo "            </div>
           
 
             <div id=\"content\">
                 ";
-        // line 55
+        // line 49
         $this->displayBlock('content', $context, $blocks);
-        // line 58
+        // line 52
         echo "            </div>
             <div id=\"footer\">
                 ";
-        // line 60
+        // line 54
         $this->displayBlock('footer', $context, $blocks);
-        // line 63
+        // line 57
         echo "            </div>
          </div>   
     </body>
 </html>";
     }
 
-    // line 6
-    public function block_title($context, array $blocks = array())
-    {
-        echo "Test Application";
-    }
-
-    // line 48
+    // line 42
     public function block_header($context, array $blocks = array())
     {
-        // line 49
+        // line 43
         echo "                    <h1>test</h1>
                 ";
     }
 
-    // line 55
+    // line 49
     public function block_content($context, array $blocks = array())
     {
-        // line 56
+        // line 50
         echo "                    <p>Review Produse</p> 
                 ";
     }
 
-    // line 60
+    // line 54
     public function block_footer($context, array $blocks = array())
     {
-        // line 61
+        // line 55
         echo "                    <p>Here is general footer</p>
                 ";
     }
@@ -190,6 +168,6 @@ class __TwigTemplate_a520be641d7e8394442a1cdb32dbcd63cdba1493bf1bf2cc6bed5dc63c3
 
     public function getDebugInfo()
     {
-        return array (  177 => 61,  174 => 60,  169 => 56,  166 => 55,  161 => 49,  158 => 48,  152 => 6,  145 => 63,  143 => 60,  139 => 58,  137 => 55,  131 => 51,  129 => 48,  95 => 16,  88 => 13,  85 => 12,  77 => 13,  74 => 12,  67 => 13,  64 => 12,  60 => 11,  57 => 10,  37 => 8,  33 => 7,  29 => 6,  23 => 2,);
+        return array (  155 => 55,  152 => 54,  147 => 50,  144 => 49,  139 => 43,  136 => 42,  129 => 57,  127 => 54,  123 => 52,  121 => 49,  115 => 45,  113 => 42,  83 => 14,  63 => 12,  59 => 11,  56 => 10,  36 => 8,  32 => 7,  28 => 6,  22 => 2,);
     }
 }

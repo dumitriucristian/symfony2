@@ -1,0 +1,17 @@
+{# GoldenBundle/Resources/views/Default/contact.html.twig #}
+{% extends 'GoldenBundle:Default:base.html.twig' %} 
+
+{% block title %}
+	First page
+{% endblock %}
+
+{% block content %}
+<h1>Contact Form should be right here</h1>
+
+    <div class="form_row">
+        {{ form_label(form.task) }}
+        {{ form_errors(form.task) }}
+        {{ form_widget(form.task) }}
+    </div>
+
+{% endblock %}

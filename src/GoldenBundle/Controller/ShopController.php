@@ -18,7 +18,7 @@ class ShopController extends Controller
     public function indexAction()
     {
     	
-    	return $this->render('GoldenBundle:Default:index.html.twig') ;
+    	return $this->render('GoldenBundle:Default:index.html.twig',array('title' =>'Shop')) ;
      } 
 
   
